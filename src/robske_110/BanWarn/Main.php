@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
 			$this->config->set('max-points-until-ban', 5);
 			$this->config->set('IP-Ban', false);
 			$this->config->set('Client-Ban', true);
-			$this->config->set('Notify-Mode', 1);
+			$this->config->set('Notify-Mode', 2);
 			$this->config->set('ConfigVersion', 3);
 		}
 		$this->config->save();
@@ -210,14 +210,11 @@ class Main extends PluginBase implements Listener{
 		$array[$Index] = [$args[1], $args[2]];
 		$this->warnsys->set($playerID, $array);
 		$this->warnsys->save();
-		$tempMsgS = TF::GREEN . "The player '".TF::DARK_GRAY.$playerName.TF::GREEN."' has been warned with the reason '".TF::DARK_GRAY.$args[1].TF::GREEN."' and ".TF::DARK_GRAY.$args[2].TF::GREEN." point(s)! He/she now has a total of ".TF::DARK_GRAY.$this->countWPoints($playerID).TF::GREEN." point(s)."; //TODO::Translate
+		$tempMsgS = TF::GREEN . "$playerName.TF::YELLOW." has been warned for '".TF::GREEN.$args[1].TF::YELLOW."' and ".TF::GREEN.$args[2].TF::YELLOW." point(s), Total points:".TF::DARK_GRAY.$this->countWPoints($playerID).TF::GREEN.""; //TODO::Translate
 		$tempMsgToP = TF::RED . "YOU HAVE BEEN WARNED BY '".$sender->getName()."' WITH THE REASON '".TF::DARK_GRAY.$args[1].TF::RED."' and ".TF::DARK_GRAY.$args[2].TF::RED." POINT(S)! YOU NOW HAVE A TOTAL OF ".TF::DARK_GRAY.$this->countWPoints($playerID).TF::RED." POINT(S)! WITH ".TF::DARK_GRAY.$this->config->get("max-points-until-ban").TF::RED." POINTS YOU WILL BE BANNED!"; //TODO::Translate
 		$this->getServer()->getPlayer($args[0])->sendMessage($tempMsgToP);
 		if($this->config->get("Notify-Mode") == 1){
 			$this->sendMsgToSender($sender, $tempMsgS);
-			$this->getServer()->broadcastMessage(TF::GREEN.$playerName.TF::YELLOW." has been warned for '".TF::GREEN.$args[1].TF::YELLOW."' and ".TF::GREEN.$args[2].TF::YELLOW." point(s));
-			if($this->getTypeAsNameOfSender($sender) != "CONSOLE"){
-				$this->getServer()->getLogger()->info($tempMsgS);
 			}
 		}elseif($this->config->get("Notify-Mode") == 2){
 			$this->getServer()->broadcastMessage($tempMsgS);
