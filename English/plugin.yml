@@ -23,12 +23,12 @@ commands:
   aliases: [wp, warnp]
 
 permissions:
- BanWarn.command.warn:
+ ServerCore.command.warn:
   description: "Allows to run the /warn command"
   default: op
- BanWarn.command.warninfo:
+ ServerCore.command.warninfo:
   description: "Allows to run the /warninfo command"
   default: op
- BanWarn.command.warnpardon:
+ ServerCore.command.warnpardon:
   description: "Allows to run the /warninfo command"
   default: op
