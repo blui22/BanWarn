@@ -1,9 +1,9 @@
-name: BanWarn
+name: BanWarn-BC
 api: [1.13.0, 2.0.0]
-version: 1.2.0-InDev-beta2
+version: 1.1.1-BluiCraft
 load: POSTWORLD
 main: robske_110\BanWarn\Main
-author: robske_110
+author: robske_110, biswarm22
 website: https://github.com/robske110/BanWarn
 
 commands:
