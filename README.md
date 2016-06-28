@@ -2,9 +2,9 @@
 ip: mcbluicraft.tk
 port: 19132
 
-*This software is modified for the BluiCraft Network. It may not work for all server systems. 
+######This software is modified for the BluiCraft Network. It may not work for all server systems. 
 
-### Original Plugin: https://github.com/robske110/BanWarn
+*Original Plugin: https://github.com/robske110/BanWarn
 ## Download: https://github.com/biswarm22/BanWarn/releases
 ##About the Plugin:
 
