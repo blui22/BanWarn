@@ -28,8 +28,8 @@ class Main extends PluginBase implements Listener{
 		$this->clientBan->save();
 		$this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
 		if($this->config->get("ConfigVersion") != 3){
-			$this->config->set('max-points-until-ban', 10);
-			$this->config->set('IP-Ban', true);
+			$this->config->set('max-points-until-ban', 5);
+			$this->config->set('IP-Ban', false);
 			$this->config->set('Client-Ban', true);
 			$this->config->set('Notify-Mode', 1);
 			$this->config->set('ConfigVersion', 3);
